@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-board {
+  width: 100%;
+  height: 500px;
+  border-bottom: 15px solid rgb(14, 185, 14);
+  margin: 0 auto;
+  position: relative; /*Para respeitar a limitação da borda*/
+  overflow: hidden; /*Para tudo que sair da delimitação quadro não aparecer na tela*/
+  background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.pipe {
+  position: absolute;  /*Para ficar parado no lugar*/
+  bottom: 0;
+  width: 80px;
+  animation: pipe-animation 1.5s infinite linear; /*Propriedade para fazer a animação "Linear p/ ficar constante a velocidade"*/
+}
+
+.mario {
+  width: 150px;
+  position: absolute; /*Para nenhuma imagem interferir na outra*/
+  bottom: 0;
+}
+.jump {
+  animation: jump 500ms ease-out; /*500ms tempo de pulo. ease-out para pular suave*/
+  
+}
+
+.clouds {
+  position: absolute;
+  width: 550px;
+  animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes pipe-animation {
+  from { /*Onde começa a animação*/
+right: -80px;
+  }
+
+  to { /*Onde termina a animação*/
+right: 100%;
+  }
+}
+
+@keyframes jump { /*A animação começa em 0 vai a 180 e volta a 0*/
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
