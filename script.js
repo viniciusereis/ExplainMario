@@ -5,7 +5,7 @@ const jump = () => {
 mario.classList.add('jump'); //Adicionando a classe de pulo
 
 //Recebe uma função e um tempo
-//Irá remover a classe jump quando a animação termina e volta a executar no keydown
+//Irá remover a classe jump quando a animação termina e volta a executar no keydown.
 setTimeout(() => {
 
   mario.classList.remove('jump');
